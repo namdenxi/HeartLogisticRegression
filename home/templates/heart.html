@@ -1,0 +1,117 @@
+{% extends 'common/layout.html' %} {% block title %}Heart Prediction{%endblock%}
+{%block body %}
+<style>
+  .form-outline {
+  width: 150px; 
+  margin: 15px; 
+  display: inline-block;
+  }
+</style>
+<form method="POST" action="/Heart">
+  <div class="container">
+    <div class="row" style="margin-bottom: 50px">
+      <div class="p-5 text-center">
+        <h1 class="mb-3">Heart Prediction System</h1>
+        <hr />
+        <p class = 'text-danger'>{{ text_warning }}</p>
+      </div>
+      {% csrf_token %}
+
+      <div class='col-12'>
+        <!--Input-->
+        <div class="form-outline">
+          <input type="number" id="Age" name="Age" class="form-control" />
+          <label class="form-label" for="Age">Age</label>
+        </div>
+        <!--Input-->
+        
+        <!--Input-->
+        <div class="form-outline">
+          <input type="number" id="Sex" name="Sex" class="form-control" />
+          <label class="form-label" for="Sex">Sex</label>
+        </div>
+        <!--Input-->
+
+        <!--Input-->
+       <div class="form-outline">
+        <input type="number" id="ChestPainType" name="ChestPainType" class="form-control" />
+        <label class="form-label" for="ChestPainType">ChestPainType</label>
+        </div>
+        <!--Input-->
+
+         <!--Input-->
+       <div class="form-outline">
+        <input type="number" id="RestingBP" name="RestingBP" class="form-control" />
+        <label class="form-label" for="RestingBP">RestingBP</label>
+        </div>
+        <!--Input-->
+
+         <!--Input-->
+       <div class="form-outline">
+        <input type="number" id="Cholesterol" name="Cholesterol" class="form-control" />
+        <label class="form-label" for="Cholesterol">Cholesterol</label>
+        </div>
+        <!--Input-->
+
+         <!--Input-->
+       <div class="form-outline">
+        <input type="number" id="FastingBS" name="FastingBS" class="form-control" />
+        <label class="form-label" for="FastingBS">FastingBS</label>
+        </div>
+        <!--Input-->
+
+         <!--Input-->
+       <div class="form-outline">
+        <input type="number" id="RestingECG" name="RestingECG" class="form-control" />
+        <label class="form-label" for="RestingECG">RestingECG</label>
+        </div>
+        <!--Input-->
+
+         <!--Input-->
+       <div class="form-outline">
+        <input type="number" id="MaxHR" name="MaxHR" class="form-control" />
+        <label class="form-label" for="MaxHR">MaxHR</label>
+        </div>
+        <!--Input-->
+
+         <!--Input-->
+       <div class="form-outline">
+        <input type="number" id="ExerciseAngina" name="ExerciseAngina" class="form-control" step="any"/>
+        <label class="form-label" for="ExerciseAngina">ExerciseAngina</label>
+        </div>
+        <!--Input-->
+
+         <!--Input-->
+       <div class="form-outline">
+        <input type="number" id="Oldpeak" name="Oldpeak" class="form-control" />
+        <label class="form-label" for="Oldpeak">Oldpeak</label>
+        </div>
+        <!--Input-->
+
+         <!--Input-->
+       <div class="form-outline">
+        <input type="number" id="ST_Slope" name="ST_Slope" class="form-control" />
+        <label class="form-label" for="ST_Slope">ST_Slope</label>
+        </div>
+        <!--Input-->
+      </div>
+      
+      <!--Submit-->      
+      <div class='col-12 text-center'>
+        <button type="Submit" class="btn btn-primary btnSubmit" style='margin: 30px 0'>Kiểm Tra</button>
+      </div>
+      <!--Submit-->
+    </div>
+  </div>
+</form>
+<!-- Toast -->
+<div class="toast fade {{show}}">
+  <div class="toast-header">
+    <strong class="mr-auto">Thông báo</strong>
+    <i class="fa-solid fa-xmark"></i>
+  </div>
+  <div class="toast-body">{{content}}</div>
+</div>
+
+<!-- Toast -->
+{% endblock %}

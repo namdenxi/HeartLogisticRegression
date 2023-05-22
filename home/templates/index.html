@@ -1,0 +1,21 @@
+{% extends 'common/layout.html' %} {% block title %}Trang Chủ{% endblock %}
+{%block body%}
+<div class="container mt-3">
+  <div class="row">
+
+    <!-- Card Item -->
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Heart Prediction</h5>
+          <p class="card-text">Hệ thống sẽ dựa theo những thông số bạn nhập vào để dự đoán xem khả năng mắc bệnh của bạn</p>
+          <a type="button" class="btn btn-primary" href="{% url 'Heart' %}">Đi ngay</a>
+        </div>
+      </div>
+    </div>
+    <!-- Card Item -->
+
+  </div>
+</div>
+
+{% endblock %}

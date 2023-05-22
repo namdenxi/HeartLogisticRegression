@@ -1,0 +1,43 @@
+{% extends 'common/layout.html' %} {% block title %}Bác Sĩ{% endblock %} 
+{%block body %}
+<table class="table align-middle mb-0 bg-white">
+    <thead class="bg-light">
+      <tr>
+        <th>Tên</th>
+        <th>Khoa</th>
+        <th>Liên Hệ</th>
+        <th>Địa Chỉ</th>
+        {% comment %} <th>Email</th> {% endcomment %}
+      </tr>
+    </thead>
+    <tbody>
+      
+        {% for doctor in doctorList %}
+        <tr>
+            <td>
+              <div class="d-flex align-items-center">
+                <img
+                    src="/home/media/{{doctor.doctor_Avatar}}"
+                    alt=""
+                    style="width: 45px; height: 45px"
+                    class="rounded-circle"
+                    />
+                <div class="ms-3">
+                  <p class="fw-bold mb-1">{{ doctor.doctor_Name }}</p>
+                  <p class="text-muted mb-0">{{ doctor.doctor_Email }}</p>
+                </div>
+              </div>
+            </td>
+            <td>
+              <p class="fw-normal mb-1">{{ doctor.doctor_Position }}</p>
+              <p class="text-muted mb-0">{{ doctor.doctor_Department }}</p>
+            </td>
+            <td>{{ doctor.doctor_Contact }}</td>
+            <td>{{ doctor.doctor_Address }}</td>
+            {% comment %} <td>{{ doctor.doctor_Email }}</td> {% endcomment %}
+            
+          </tr>
+          {% endfor %}
+    </tbody>
+  </table>
+  {% endblock %}
